@@ -1,0 +1,148 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Neon Streetwear Jacket",
+      "price": 899000,
+      "image": "https://i.postimg.cc/Fs5cdXtB/Chat-GPT-Image-Jun-7-2025-02-46-57-PM.png",
+      "category": "Jackets",
+      "description": "Jaket streetwear modern dengan aksen neon yang mencolok"
+    },
+    {
+      "id": 2,
+      "name": "Urban Cargo Pants",
+      "price": 459000,
+      "image": "https://i.postimg.cc/KjZ2wYkW/Chat-GPT-Image-Jun-7-2025-02-52-50-PM.png",
+      "category": "Pants",
+      "description": "Celana cargo dengan desain urban yang fungsional"
+    },
+    {
+      "id": 3,
+      "name": "Cyber Graphic Tee",
+      "price": 249000,
+      "image": "https://i.postimg.cc/J7qDnDqG/Chat-GPT-Image-Jun-7-2025-02-55-02-PM.png",
+      "category": "T-Shirts",
+      "description": "T-shirt dengan desain grafis cyberpunk yang unik"
+    },
+    {
+      "id": 4,
+      "name": "Neon High-tops",
+      "price": 699000,
+      "image": "https://i.postimg.cc/wM07bZvh/Chat-GPT-Image-Jun-7-2025-02-56-55-PM.png",
+      "category": "Accessories",
+      "description": "Sepatu high-top dengan aksen neon yang eye-catching"
+    },
+    {
+      "id": 5,
+      "name": "Digital Camo Hoodie",
+      "price": 599000,
+      "image": "https://i.postimg.cc/WbGZ0YTb/Chat-GPT-Image-Jun-7-2025-02-46-59-PM.png",
+      "category": "Jackets",
+      "description": "Hoodie dengan motif kamuflase digital modern"
+    },
+    {
+      "id": 6,
+      "name": "Tech Wear Backpack",
+      "price": 799000,
+      "image": "https://i.postimg.cc/L5NppMj8/Chat-GPT-Image-Jun-7-2025-02-53-37-PM.png",
+      "category": "Accessories",
+      "description": "Tas ransel dengan desain techwear futuristik"
+    },
+    {
+      "id": 7,
+      "name": "Cyberpunk Bomber Jacket",
+      "price": 849000,
+      "image": "https://i.postimg.cc/fb0Lc59R/Chat-GPT-Image-Jun-7-2025-04-02-08-PM.png",
+      "category": "Jackets",
+      "description": "Jaket bomber dengan elemen cyberpunk"
+    },
+    {
+      "id": 8,
+      "name": "Tactical Jogger Pants",
+      "price": 479000,
+      "image": "https://i.postimg.cc/W1zt3spr/Chat-GPT-Image-Jun-7-2025-04-02-11-PM.png",
+      "category": "Pants",
+      "description": "Celana jogger dengan detail taktis"
+    },
+    {
+      "id": 9,
+      "name": "Neon Grid T-Shirt",
+      "price": 299000,
+      "image": "https://i.postimg.cc/ZKVC4Wm4/Chat-GPT-Image-Jun-7-2025-04-04-26-PM.png",
+      "category": "T-Shirts",
+      "description": "T-shirt dengan motif grid neon"
+    },
+    {
+      "id": 10,
+      "name": "Urban Combat Boots",
+      "price": 749000,
+      "image": "https://i.postimg.cc/4x0yHjn0/Chat-GPT-Image-Jun-7-2025-04-04-21-PM.png",
+      "category": "Accessories",
+      "description": "Sepatu boots dengan desain urban modern"
+    },
+    {
+      "id": 11,
+      "name": "Stealth Tech Jacket",
+      "price": 879000,
+      "image": "https://i.postimg.cc/MTdhvJpM/Chat-GPT-Image-Jun-7-2025-04-07-35-PM.png",
+      "category": "Jackets",
+      "description": "Jaket teknikal dengan desain minimalis"
+    },
+    {
+      "id": 12,
+      "name": "Digital Wave Cap",
+      "price": 259000,
+      "image": "https://i.postimg.cc/XqPmkKFn/Chat-GPT-Image-Jun-7-2025-04-07-12-PM.png",
+      "category": "Accessories",
+      "description": "Topi dengan motif gelombang digital"
+    },
+    {
+      "id": 13,
+      "name": "Matrix Track Jacket",
+      "price": 699000,
+      "image": "https://i.postimg.cc/fWqGssP1/Chat-GPT-Image-Jun-7-2025-04-10-50-PM.png",
+      "category": "Jackets",
+      "description": "Jaket track dengan motif matrix futuristik"
+    },
+    {
+      "id": 14,
+      "name": "Cargo Tech Shorts",
+      "price": 399000,
+      "image": "https://i.postimg.cc/Vvv2tZJ7/Chat-GPT-Image-Jun-7-2025-04-10-28-PM.png",
+      "category": "Pants",
+      "description": "Celana pendek cargo dengan detail teknikal"
+    },
+    {
+      "id": 15,
+      "name": "Glitch Art Tee",
+      "price": 279000,
+      "image": "https://i.postimg.cc/SsBtXQpK/Chat-GPT-Image-Jun-7-2025-04-14-10-PM.png",
+      "category": "T-Shirts",
+      "description": "T-shirt dengan desain glitch art"
+    },
+    {
+      "id": 16,
+      "name": "LED Strip Sneakers",
+      "price": 649000,
+      "image": "https://i.postimg.cc/HLPNg4ZX/Chat-GPT-Image-Jun-7-2025-04-14-54-PM.png",
+      "category": "Accessories",
+      "description": "Sneakers dengan aksen LED strip"
+    },
+    {
+      "id": 17,
+      "name": "Cyber Punk Vest",
+      "price": 499000,
+      "image": "https://i.postimg.cc/kGWYWrnv/Chat-GPT-Image-Jun-7-2025-04-15-20-PM.png",
+      "category": "Jackets",
+      "description": "Rompi dengan detail cyberpunk"
+    },
+    {
+      "id": 18,
+      "name": "Tech Sling Bag",
+      "price": 359000,
+      "image": "https://i.postimg.cc/9MRnFRKS/Chat-GPT-Image-Jun-7-2025-04-16-40-PM.png",
+      "category": "Accessories",
+      "description": "Tas selempang dengan desain technical"
+    }
+  ]
+}

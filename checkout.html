@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - UrbanThread</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="css/style.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <script>
+        // Tailwind Config
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        neon: {
+                            cyan: '#00FFFF',
+                            magenta: '#FF00FF',
+                            black: '#000000',
+                        }
+                    },
+                    boxShadow: {
+                        'neon': '0 0 10px rgba(0, 255, 255, 0.5), 0 0 20px rgba(0, 255, 255, 0.3)',
+                        'neon-hover': '0 0 15px rgba(0, 255, 255, 0.7), 0 0 30px rgba(0, 255, 255, 0.5)',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-black text-white min-h-screen">
+    <nav class="fixed w-full bg-black/80 backdrop-blur-md border-b border-neon-cyan/20 z-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="index.html" class="flex-shrink-0 flex items-center">
+                        <h1 class="text-2xl font-bold text-neon-cyan animate-pulse">UrbanThread</h1>
+                    </a>
+                    <div class="hidden md:ml-6 md:flex md:space-x-8">
+                        <a href="index.html" class="text-gray-300 hover:text-neon-cyan border-transparent hover:border-neon-cyan border-b-2 px-1 pt-1 text-sm font-medium transition-colors duration-300">
+                            Home
+                        </a>
+                        <a href="product.html" class="text-gray-300 hover:text-neon-cyan border-transparent hover:border-neon-cyan border-b-2 px-1 pt-1 text-sm font-medium transition-colors duration-300">
+                            Products
+                        </a>
+                        <a href="about.html" class="text-gray-300 hover:text-neon-cyan border-transparent hover:border-neon-cyan border-b-2 px-1 pt-1 text-sm font-medium transition-colors duration-300">
+                            About
+                        </a>
+                        <a href="contact.html" class="text-gray-300 hover:text-neon-cyan border-transparent hover:border-neon-cyan border-b-2 px-1 pt-1 text-sm font-medium transition-colors duration-300">
+                            Contact
+                        </a>
+                    </div>
+                </div>
+
+                <div class="flex items-center space-x-4">
+                    <a href="cart.html" class="relative py-1 px-2 text-neon-cyan hover:text-white transition-colors duration-300">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
+                        </svg>
+                        <span id="cartCount" class="absolute -top-2 -right-2 inline-flex items-center justify-center w-5 h-5 text-xs font-bold bg-neon-cyan text-black rounded-full">0</span>
+                    </a>
+
+                    <button type="button" class="md:hidden text-gray-300 hover:text-neon-cyan p-2" aria-controls="mobile-menu" aria-expanded="false">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="md:hidden hidden transform transition-transform duration-300 ease 
+                    bg-black/95 backdrop-blur-md border-t border-neon-cyan/20" id="mobile-menu">
+            <div class="px-4 pt-4 pb-6 space-y-2">
+                <a href="index.html" 
+                   class="text-gray-300 hover:text-neon-cyan hover:bg-black/50 hover:border-neon-cyan/50 border border-transparent block px-4 py-3 rounded-lg text-base font-medium transition-all duration-300">
+                    Home
+                </a>
+                <a href="product.html" 
+                   class="text-gray-300 hover:text-neon-cyan hover:bg-black/50 hover:border-neon-cyan/50 border border-transparent block px-4 py-3 rounded-lg text-base font-medium transition-all duration-300">
+                    Products
+                </a>
+                <a href="about.html" 
+                   class="text-gray-300 hover:text-neon-cyan hover:bg-black/50 hover:border-neon-cyan/50 border border-transparent block px-4 py-3 rounded-lg text-base font-medium transition-all duration-300">
+                    About
+                </a>
+                <a href="contact.html" 
+                   class="text-gray-300 hover:text-neon-cyan hover:bg-black/50 hover:border-neon-cyan/50 border border-transparent block px-4 py-3 rounded-lg text-base font-medium transition-all duration-300">
+                    Contact
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-24 pb-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h1 class="text-4xl font-bold text-neon-cyan">Checkout</h1>
+                <p class="mt-4 text-gray-400">Complete your purchase</p>
+            </div>
+
+            <div class="mb-8">
+                <a href="cart.html" class="inline-flex items-center text-gray-400 hover:text-neon-cyan transition-colors duration-300">
+                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+                    </svg>
+                    Back to Cart
+                </a>
+            </div>
+
+            <div class="grid gap-8 lg:grid-cols-12">
+                <div class="lg:col-span-8">
+                    <form id="checkoutForm" class="space-y-8">
+                        <div class="bg-black/50 border border-neon-cyan/20 rounded-lg p-6">
+                            <h2 class="text-xl font-semibold text-neon-cyan mb-4">Personal Information</h2>
+                            <div class="grid gap-6 md:grid-cols-2">
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-300 mb-2">First Name</label>
+                                    <input type="text" required name="firstName"
+                                           class="w-full bg-black/30 border border-neon-cyan/20 rounded-lg px-4 py-2 text-white focus:border-neon-cyan focus:ring-1 focus:ring-neon-cyan outline-none transition-colors placeholder-gray-500">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-300 mb-2">Last Name</label>
+                                    <input type="text" required name="lastName"
+                                           class="w-full bg-black/30 border border-neon-cyan/20 rounded-lg px-4 py-2 text-white focus:border-neon-cyan focus:ring-1 focus:ring-neon-cyan outline-none transition-colors placeholder-gray-500">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-300 mb-2">Email</label>
+                                    <input type="email" required name="email"
+                                           class="w-full bg-black/30 border border-neon-cyan/20 rounded-lg px-4 py-2 text-white focus:border-neon-cyan focus:ring-1 focus:ring-neon-cyan outline-none transition-colors placeholder-gray-500">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-300 mb-2">Phone</label>
+                                    <input type="tel" required name="phone"
+                                           class="w-full bg-black/30 border border-neon-cyan/20 rounded-lg px-4 py-2 text-white focus:border-neon-cyan focus:ring-1 focus:ring-neon-cyan outline-none transition-colors placeholder-gray-500">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-black/50 border border-neon-cyan/20 rounded-lg p-6">
+                            <h2 class="text-xl font-semibold text-neon-cyan mb-4">Shipping Information</h2>
+                            <div class="space-y-4">
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-300 mb-2">Address</label>
+                                    <textarea required name="address" rows="3"
+                                              class="w-full bg-black/30 border border-neon-cyan/20 rounded-lg px-4 py-2 text-white focus:border-neon-cyan focus:ring-1 focus:ring-neon-cyan outline-none transition-colors placeholder-gray-500"></textarea>
+                                </div>
+                                <div class="grid gap-6 md:grid-cols-3">
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-300 mb-2">City</label>
+                                        <input type="text" required name="city"
+                                               class="w-full bg-black/30 border border-neon-cyan/20 rounded-lg px-4 py-2 text-white focus:border-neon-cyan focus:ring-1 focus:ring-neon-cyan outline-none transition-colors placeholder-gray-500">
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-300 mb-2">Province</label>
+                                        <input type="text" required name="province"
+                                               class="w-full bg-black/30 border border-neon-cyan/20 rounded-lg px-4 py-2 text-white focus:border-neon-cyan focus:ring-1 focus:ring-neon-cyan outline-none transition-colors placeholder-gray-500">
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-300 mb-2">Postal Code</label>
+                                        <input type="text" required name="postalCode"
+                                               class="w-full bg-black/30 border border-neon-cyan/20 rounded-lg px-4 py-2 text-white focus:border-neon-cyan focus:ring-1 focus:ring-neon-cyan outline-none transition-colors placeholder-gray-500">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-black/50 border border-neon-cyan/20 rounded-lg p-6">
+                            <h2 class="text-xl font-semibold text-neon-cyan mb-4">Payment Information</h2>
+                            <div class="space-y-4">
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-300 mb-2">Card Number</label>
+                                    <input type="text" required id="cardNumber" name="cardNumber" placeholder="**** **** **** ****"
+                                           class="w-full bg-black/30 border border-neon-cyan/20 rounded-lg px-4 py-2 text-white focus:border-neon-cyan focus:ring-1 focus:ring-neon-cyan outline-none transition-colors placeholder-gray-500">
+                                </div>
+                                <div class="grid gap-6 md:grid-cols-3">
+                                    <div class="col-span-2">
+                                        <label class="block text-sm font-medium text-gray-300 mb-2">Expiration Date</label>
+                                        <div class="grid grid-cols-2 gap-4">
+                                            <input type="text" required id="expiryMonth" name="expiryMonth" placeholder="MM"
+                                                   class="w-full bg-black/30 border border-neon-cyan/20 rounded-lg px-4 py-2 text-white focus:border-neon-cyan focus:ring-1 focus:ring-neon-cyan outline-none transition-colors placeholder-gray-500">
+                                            <input type="text" required id="expiryYear" name="expiryYear" placeholder="YY"
+                                                   class="w-full bg-black/30 border border-neon-cyan/20 rounded-lg px-4 py-2 text-white focus:border-neon-cyan focus:ring-1 focus:ring-neon-cyan outline-none transition-colors placeholder-gray-500">
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-300 mb-2">CVV</label>
+                                        <input type="text" required id="cvv" name="cvv" placeholder="***"
+                                               class="w-full bg-black/30 border border-neon-cyan/20 rounded-lg px-4 py-2 text-white focus:border-neon-cyan focus:ring-1 focus:ring-neon-cyan outline-none transition-colors placeholder-gray-500">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button type="submit" 
+                                class="w-full bg-neon-cyan text-black py-3 rounded-lg font-semibold hover:bg-opacity-80 transition-all duration-300">
+                            Place Order
+                        </button>
+                    </form>
+                </div>
+
+                <div class="lg:col-span-4">
+                    <div class="bg-black/50 border border-neon-cyan/20 rounded-lg p-6 space-y-4 sticky top-24">
+                        <h2 class="text-xl font-semibold text-neon-cyan">Order Summary</h2>
+                        
+                        <div id="orderItems" class="space-y-4">
+                        </div>
+
+                        <div class="space-y-2">
+                            <div class="flex justify-between text-gray-300">
+                                <span>Subtotal</span>
+                                <span id="subtotal">Rp 0</span>
+                            </div>
+                            <div class="flex justify-between text-gray-300">
+                                <span>Shipping</span>
+                                <span>Free</span>
+                            </div>
+                            <div class="border-t border-neon-cyan/20 pt-2">
+                                <div class="flex justify-between font-semibold">
+                                    <span class="text-neon-cyan">Total</span>
+                                    <span id="total" class="text-neon-cyan">Rp 0</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/checkout.js"></script>
+</body>
+</html>

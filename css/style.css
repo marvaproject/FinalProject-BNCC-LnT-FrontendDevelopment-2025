@@ -1,0 +1,130 @@
+/* Theme Toggle Button */
+.theme-toggle {
+  @apply p-2 rounded-lg text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors duration-200;
+}
+
+/* Neon Text Effects */
+.text-neon {
+  text-shadow:
+    0 0 5px rgba(0, 255, 255, 0.5),
+    0 0 10px rgba(0, 255, 255, 0.3);
+}
+
+/* Neon Border Effects */
+.border-neon {
+  box-shadow:
+    0 0 5px rgba(0, 255, 255, 0.5),
+    0 0 10px rgba(0, 255, 255, 0.3);
+}
+
+/* Custom Animations */
+@keyframes pulsate {
+  0% {
+    box-shadow:
+      0 0 5px rgba(0, 255, 255, 0.5),
+      0 0 10px rgba(0, 255, 255, 0.3);
+  }
+  50% {
+    box-shadow:
+      0 0 10px rgba(0, 255, 255, 0.7),
+      0 0 20px rgba(0, 255, 255, 0.5),
+      0 0 30px rgba(0, 255, 255, 0.3);
+  }
+  100% {
+    box-shadow:
+      0 0 5px rgba(0, 255, 255, 0.5),
+      0 0 10px rgba(0, 255, 255, 0.3);
+  }
+}
+
+.animate-pulsate {
+  animation: pulsate 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Smooth Transitions */
+.transition-all {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+}
+
+/* Custom Hover Card Effect */
+.hover-card {
+  @apply relative overflow-hidden rounded-lg transform transition-all duration-300;
+}
+
+.hover-card:hover {
+  @apply -translate-y-1 shadow-lg dark:shadow-neon;
+}
+
+/* Mobile Menu Slide Animation */
+.mobile-menu-enter {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+.mobile-menu-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition:
+    opacity 200ms,
+    transform 200ms;
+}
+
+.mobile-menu-exit {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.mobile-menu-exit-active {
+  opacity: 0;
+  transform: translateY(-10px);
+  transition:
+    opacity 200ms,
+    transform 200ms;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-100 dark:bg-gray-900;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-400 dark:bg-gray-700 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-gray-500 dark:bg-gray-600;
+}
+
+/* Selection Styling */
+::selection {
+  @apply bg-neon-cyan/20 text-neon-cyan;
+}
+
+/* Focus Styles */
+*:focus {
+  @apply outline-none ring-2 ring-neon-cyan/50;
+}
+
+/* Loading Animation */
+@keyframes spin-glow {
+  0% {
+    transform: rotate(0deg);
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+  }
+  100% {
+    transform: rotate(360deg);
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.7);
+  }
+}
+
+.loading-spinner {
+  @apply w-8 h-8 border-4 border-transparent border-t-neon-cyan rounded-full;
+  animation: spin-glow 1s linear infinite;
+}

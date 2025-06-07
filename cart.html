@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart - UrbanThread</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="css/style.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        neon: {
+                            cyan: '#00FFFF',
+                            magenta: '#FF00FF',
+                            black: '#000000',
+                        }
+                    },
+                    boxShadow: {
+                        'neon': '0 0 10px rgba(0, 255, 255, 0.5), 0 0 20px rgba(0, 255, 255, 0.3)',
+                        'neon-hover': '0 0 15px rgba(0, 255, 255, 0.7), 0 0 30px rgba(0, 255, 255, 0.5)',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-black text-white min-h-screen">
+    <nav class="fixed w-full bg-black/80 backdrop-blur-md border-b border-neon-cyan/20 z-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="index.html" class="flex-shrink-0 flex items-center">
+                        <h1 class="text-2xl font-bold text-neon-cyan animate-pulse">UrbanThread</h1>
+                    </a>
+                    <div class="hidden md:ml-6 md:flex md:space-x-8">
+                        <a href="index.html" class="text-gray-300 hover:text-neon-cyan border-transparent hover:border-neon-cyan border-b-2 px-1 pt-1 text-sm font-medium transition-colors duration-300">
+                            Home
+                        </a>
+                        <a href="product.html" class="text-gray-300 hover:text-neon-cyan border-transparent hover:border-neon-cyan border-b-2 px-1 pt-1 text-sm font-medium transition-colors duration-300">
+                            Products
+                        </a>
+                        <a href="about.html" class="text-gray-300 hover:text-neon-cyan border-transparent hover:border-neon-cyan border-b-2 px-1 pt-1 text-sm font-medium transition-colors duration-300">
+                            About
+                        </a>
+                        <a href="contact.html" class="text-gray-300 hover:text-neon-cyan border-transparent hover:border-neon-cyan border-b-2 px-1 pt-1 text-sm font-medium transition-colors duration-300">
+                            Contact
+                        </a>
+                    </div>
+                </div>
+
+                <div class="flex items-center space-x-4">
+                    <a href="cart.html" class="relative py-1 px-2 text-neon-cyan hover:text-white transition-colors duration-300">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
+                        </svg>
+                        <span id="cartCount" class="absolute -top-2 -right-2 inline-flex items-center justify-center w-5 h-5 text-xs font-bold bg-neon-cyan text-black rounded-full">0</span>
+                    </a>
+
+                    <button type="button" class="md:hidden text-gray-300 hover:text-neon-cyan p-2" aria-controls="mobile-menu" aria-expanded="false">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="md:hidden hidden transform transition-transform duration-300 ease 
+                    bg-black/95 backdrop-blur-md border-t border-neon-cyan/20" id="mobile-menu">
+            <div class="px-4 pt-4 pb-6 space-y-2">
+                <a href="index.html" 
+                   class="text-gray-300 hover:text-neon-cyan hover:bg-black/50 hover:border-neon-cyan/50 border border-transparent block px-4 py-3 rounded-lg text-base font-medium transition-all duration-300">
+                    Home
+                </a>
+                <a href="product.html" 
+                   class="text-gray-300 hover:text-neon-cyan hover:bg-black/50 hover:border-neon-cyan/50 border border-transparent block px-4 py-3 rounded-lg text-base font-medium transition-all duration-300">
+                    Products
+                </a>
+                <a href="about.html" 
+                   class="text-gray-300 hover:text-neon-cyan hover:bg-black/50 hover:border-neon-cyan/50 border border-transparent block px-4 py-3 rounded-lg text-base font-medium transition-all duration-300">
+                    About
+                </a>
+                <a href="contact.html" 
+                   class="text-gray-300 hover:text-neon-cyan hover:bg-black/50 hover:border-neon-cyan/50 border border-transparent block px-4 py-3 rounded-lg text-base font-medium transition-all duration-300">
+                    Contact
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-24 pb-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h1 class="text-4xl font-bold text-neon-cyan">Your Cart</h1>
+                <p class="mt-4 text-gray-400">Review and modify your items before checkout</p>
+            </div>
+
+            <div class="grid gap-8 lg:grid-cols-12">
+                <div class="lg:col-span-8">
+                    <div id="cartItems" class="space-y-4">
+                    </div>
+                </div>
+
+                <div class="lg:col-span-4">
+                    <div class="bg-black/50 border border-neon-cyan/20 rounded-lg p-6 space-y-4">
+                        <h2 class="text-xl font-semibold text-neon-cyan">Order Summary</h2>
+                        
+                        <div class="space-y-2">
+                            <div class="flex justify-between text-gray-300">
+                                <span>Subtotal</span>
+                                <span id="subtotal">Rp 0</span>
+                            </div>
+                            <div class="flex justify-between text-gray-300">
+                                <span>Shipping</span>
+                                <span>Free</span>
+                            </div>
+                            <div class="border-t border-neon-cyan/20 pt-2">
+                                <div class="flex justify-between font-semibold">
+                                    <span class="text-neon-cyan">Total</span>
+                                    <span id="total" class="text-neon-cyan">Rp 0</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button onclick="window.location.href='checkout.html'" 
+                                class="w-full bg-neon-cyan text-black py-3 rounded-lg font-semibold hover:bg-opacity-80 transition-all duration-300">
+                            Proceed to Checkout
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="emptyCart" class="hidden text-center py-16">
+                <div class="space-y-4">
+                    <svg class="w-16 h-16 mx-auto text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
+                    </svg>
+                    <h2 class="text-2xl font-semibold text-gray-300">Your cart is empty</h2>
+                    <p class="text-gray-400">Looks like you haven't added any items to your cart yet.</p>
+                    <a href="product.html" 
+                       class="inline-block mt-4 px-8 py-3 text-neon-cyan border border-neon-cyan rounded-lg hover:bg-neon-cyan/10 transition-all duration-300">
+                        Continue Shopping
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <template id="cartItemTemplate">
+        <div class="bg-black/50 border border-neon-cyan/20 rounded-lg p-4 hover:border-neon-cyan/40 transition-all duration-300">
+            <div class="flex items-center space-x-4">
+                <img class="w-24 h-24 object-cover rounded-lg" src="" alt="">
+                <div class="flex-1">
+                    <h3 class="text-lg font-medium text-white"></h3>
+                    <div class="flex items-center space-x-4 mt-2">
+                        <select class="size-selector bg-black/50 border border-neon-cyan/20 text-gray-300 rounded-lg py-1 px-2 hover:border-neon-cyan focus:border-neon-cyan focus:ring-1 focus:ring-neon-cyan outline-none">
+                            <option value="S">S</option>
+                            <option value="M">M</option>
+                            <option value="L">L</option>
+                            <option value="XL">XL</option>
+                        </select>
+                        <div class="flex items-center border border-neon-cyan/20 rounded-lg">
+                            <button class="quantity-btn decrease p-1 text-gray-400 hover:text-neon-cyan transition-colors">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 12H4"></path>
+                                </svg>
+                            </button>
+                            <span class="quantity px-3 text-gray-300"></span>
+                            <button class="quantity-btn increase p-1 text-gray-400 hover:text-neon-cyan transition-colors">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-right">
+                    <p class="text-neon-cyan font-medium item-price"></p>
+                    <button class="remove-item mt-2 text-gray-400 hover:text-red-500 transition-colors">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/cart.js"></script>
+</body>
+</html>

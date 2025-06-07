@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Detail - UrbanThread</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="css/style.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        neon: {
+                            cyan: '#00FFFF',
+                            magenta: '#FF00FF',
+                            black: '#000000',
+                        }
+                    },
+                    boxShadow: {
+                        'neon': '0 0 10px rgba(0, 255, 255, 0.5), 0 0 20px rgba(0, 255, 255, 0.3)',
+                        'neon-hover': '0 0 15px rgba(0, 255, 255, 0.7), 0 0 30px rgba(0, 255, 255, 0.5)',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-black text-white min-h-screen">
+    <nav class="fixed w-full bg-black/80 backdrop-blur-md border-b border-neon-cyan/20 z-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="index.html" class="flex-shrink-0 flex items-center">
+                        <h1 class="text-2xl font-bold text-neon-cyan animate-pulse">UrbanThread</h1>
+                    </a>
+                    <div class="hidden md:ml-6 md:flex md:space-x-8">
+                        <a href="index.html" class="text-gray-300 hover:text-neon-cyan border-transparent hover:border-neon-cyan border-b-2 px-1 pt-1 text-sm font-medium transition-colors duration-300">
+                            Home
+                        </a>
+                        <a href="product.html" class="text-gray-300 hover:text-neon-cyan border-transparent hover:border-neon-cyan border-b-2 px-1 pt-1 text-sm font-medium transition-colors duration-300">
+                            Products
+                        </a>
+                        <a href="about.html" class="text-gray-300 hover:text-neon-cyan border-transparent hover:border-neon-cyan border-b-2 px-1 pt-1 text-sm font-medium transition-colors duration-300">
+                            About
+                        </a>
+                        <a href="contact.html" class="text-gray-300 hover:text-neon-cyan border-transparent hover:border-neon-cyan border-b-2 px-1 pt-1 text-sm font-medium transition-colors duration-300">
+                            Contact
+                        </a>
+                    </div>
+                </div>
+
+                <div class="flex items-center space-x-4">
+                    <a href="cart.html" class="relative py-1 px-2 text-neon-cyan hover:text-white transition-colors duration-300">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
+                        </svg>
+                        <span id="cartCount" class="absolute -top-2 -right-2 inline-flex items-center justify-center w-5 h-5 text-xs font-bold bg-neon-cyan text-black rounded-full">0</span>
+                    </a>
+
+                    <button type="button" class="md:hidden text-gray-300 hover:text-neon-cyan" aria-controls="mobile-menu" aria-expanded="false">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="md:hidden hidden" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="index.html" 
+                   class="text-gray-300 hover:text-neon-cyan hover:bg-black/50 block px-3 py-2 rounded-lg text-base font-medium transition-all duration-300">
+                    Home
+                </a>
+                <a href="product.html" 
+                   class="text-gray-300 hover:text-neon-cyan hover:bg-black/50 block px-3 py-2 rounded-lg text-base font-medium transition-all duration-300">
+                    Products
+                </a>
+                <a href="about.html" 
+                   class="text-gray-300 hover:text-neon-cyan hover:bg-black/50 block px-3 py-2 rounded-lg text-base font-medium transition-all duration-300">
+                    About
+                </a>
+                <a href="contact.html" 
+                   class="text-gray-300 hover:text-neon-cyan hover:bg-black/50 block px-3 py-2 rounded-lg text-base font-medium transition-all duration-300">
+                    Contact
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-24 pb-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid gap-8 lg:grid-cols-2">
+                <div class="space-y-4">
+                    <div class="aspect-w-1 aspect-h-1 relative overflow-hidden rounded-lg border border-neon-cyan/20">
+                        <img src="https://via.placeholder.com/600x600" alt="Product Image" 
+                             class="w-full h-full object-cover">
+                    </div>
+                </div>
+
+                <div class="space-y-6">
+                    <div class="space-y-2">
+                        <h1 class="text-3xl font-bold text-neon-cyan">Product Name</h1>
+                        <p class="text-2xl text-neon-cyan">Product Price</p>
+                    </div>
+
+                    <div class="space-y-4">
+                        <h3 class="text-lg font-medium text-gray-300">Select Size</h3>
+                        <div class="grid grid-cols-4 gap-4">
+                            <button class="py-2 rounded-lg border border-neon-cyan/20 text-gray-300 hover:border-neon-cyan hover:text-neon-cyan transition-colors">S</button>
+                            <button class="py-2 rounded-lg border border-neon-cyan/20 text-gray-300 hover:border-neon-cyan hover:text-neon-cyan transition-colors">M</button>
+                            <button class="py-2 rounded-lg border border-neon-cyan/20 text-gray-300 hover:border-neon-cyan hover:text-neon-cyan transition-colors">L</button>
+                            <button class="py-2 rounded-lg border border-neon-cyan/20 text-gray-300 hover:border-neon-cyan hover:text-neon-cyan transition-colors">XL</button>
+                        </div>
+                    </div>
+
+                    <div class="space-y-4">
+                        <div class="flex items-center space-x-4">
+                            <div class="flex items-center border border-neon-cyan/20 rounded-lg">
+                                <button class="p-2 text-gray-300 hover:text-neon-cyan transition-colors" onclick="updateQuantity(-1)">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 12H4"></path>
+                                    </svg>
+                                </button>
+                                <span id="quantity" class="px-4 py-2 text-gray-300 min-w-[3rem] text-center">1</span>
+                                <button class="p-2 text-gray-300 hover:text-neon-cyan transition-colors" onclick="updateQuantity(1)">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
+                                    </svg>
+                                </button>
+                            </div>
+                            <button onclick="addToCart()" 
+                                    class="flex-1 bg-neon-cyan text-black py-3 rounded-lg font-semibold hover:bg-opacity-80 transition-all duration-300">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="space-y-4 border-t border-neon-cyan/20 pt-6">
+                        <h3 class="text-lg font-medium text-neon-cyan">Product Description</h3>
+                        <div class="prose prose-invert">
+                            <p class="text-gray-300">
+                                Product description will be loaded here.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <section class="py-16 border-t border-neon-cyan/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-2xl font-bold text-neon-cyan mb-8">You May Also Like</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6" id="relatedProducts">
+            </div>
+        </div>
+    </section>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/product-detail.js"></script>
+</body>
+</html>
