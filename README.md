@@ -72,29 +72,46 @@ Kemudian buka http://localhost:8000 di browser Anda.
 ## Struktur Proyek
 
 ```
-final-project-ecommerce/
+FinalProject-BNCC-LnT-FrontendDevelopment-2025/
 ├── css/
-│   └── style.css
+│   └── style.css              # File utama CSS untuk styling
 ├── js/
-│   ├── main.js
-│   └── products.json
-├── images/
-├── index.html
-├── product.html
-├── product-detail.html
-├── cart.html
-├── checkout.html
-├── about.html
-└── contact.html
+│   ├── cart.js               # Logic untuk keranjang belanja
+│   ├── checkout.js           # Logic untuk proses checkout
+│   ├── main.js              # JavaScript utama dan inisialisasi
+│   ├── product-detail.js    # Logic untuk halaman detail produk
+│   └── products.json        # Data produk dalam format JSON
+├── image/                    # Direktori untuk gambar produk dan aset
+├── index.html               # Halaman utama
+├── product.html             # Halaman daftar produk
+├── product-detail.html      # Template halaman detail produk
+├── cart.html               # Halaman keranjang belanja
+├── checkout.html           # Halaman checkout
+├── about.html              # Halaman tentang kami
+├── contact.html            # Halaman kontak
+└── README.md               # Dokumentasi proyek
 ```
 
-## Dukungan Browser
+## Penjelasan File-file Utama
 
-Website ini telah diuji dan berfungsi pada:
-- Chrome (direkomendasikan)
-- Firefox
-- Safari
-- Edge
+### File HTML
+- `index.html`: Halaman beranda dengan tampilan produk unggulan
+- `product.html`: Menampilkan daftar lengkap produk dengan fitur filter dan sort
+- `product-detail.html`: Template untuk menampilkan detail produk individual
+- `cart.html`: Halaman keranjang belanja dengan perhitungan total
+- `checkout.html`: Form checkout dengan validasi
+- `about.html`: Informasi tentang perusahaan dan brand
+- `contact.html`: Form kontak dan informasi kontak
+
+### File JavaScript
+- `main.js`: Mengatur fungsi-fungsi utama website dan event listeners
+- `cart.js`: Mengelola operasi keranjang belanja dan localStorage
+- `checkout.js`: Validasi form dan proses checkout
+- `product-detail.js`: Menangani tampilan dan interaksi detail produk
+- `products.json`: Database produk dalam format JSON
+
+### File CSS
+- `style.css`: Mengatur seluruh styling website termasuk responsivitas
 
 ## Teknologi yang Digunakan
 
@@ -103,6 +120,14 @@ Website ini telah diuji dan berfungsi pada:
 - Vanilla JavaScript
 - Library AOS (Animate On Scroll)
 - Local Storage untuk fungsionalitas keranjang
+
+## Dukungan Browser
+
+Website ini telah diuji dan berfungsi pada:
+- Chrome (direkomendasikan)
+- Firefox
+- Safari
+- Edge
 
 ## Cara Berkontribusi
 
@@ -115,4 +140,3 @@ Website ini telah diuji dan berfungsi pada:
 ## Lisensi
 
 Proyek ini dilisensikan di bawah Lisensi MIT - lihat file LICENSE untuk detail
-# FinalProject-BNCC-LnT-FrontendDevelopment-2025
