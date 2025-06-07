@@ -29,9 +29,9 @@
         }
     </script>
 </head>
-<body class="bg-black text-white min-h-screen">
+<body class="bg-black text-white min-h-screen overflow-x-hidden">
     <nav class="fixed w-full bg-black/80 backdrop-blur-md border-b border-neon-cyan/20 z-50">
-        <div class="max-w-7xl mx-auto px-4">
+        <div class="max-w-7xl mx-auto px-2 sm:px-4">
             <div class="flex justify-between h-16">
                 <div class="flex items-center">
                     <a href="index.html" class="flex-shrink-0 flex items-center">
@@ -94,7 +94,7 @@
     </nav>
 
     <main class="pt-24 pb-16">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto px-2 sm:px-4 md:px-6 lg:px-8">
             <div class="text-center mb-12">
                 <h1 class="text-4xl font-bold text-neon-cyan">Checkout</h1>
                 <p class="mt-4 text-gray-400">Complete your purchase</p>
@@ -112,9 +112,9 @@
             <div class="grid gap-8 lg:grid-cols-12">
                 <div class="lg:col-span-8">
                     <form id="checkoutForm" class="space-y-8">
-                        <div class="bg-black/50 border border-neon-cyan/20 rounded-lg p-6">
+                        <div class="bg-black/50 border border-neon-cyan/20 rounded-lg p-4 sm:p-6">
                             <h2 class="text-xl font-semibold text-neon-cyan mb-4">Personal Information</h2>
-                            <div class="grid gap-6 md:grid-cols-2">
+                            <div class="grid gap-4 sm:gap-6 grid-cols-1 sm:grid-cols-2">
                                 <div>
                                     <label class="block text-sm font-medium text-gray-300 mb-2">First Name</label>
                                     <input type="text" required name="firstName"
@@ -138,7 +138,7 @@
                             </div>
                         </div>
 
-                        <div class="bg-black/50 border border-neon-cyan/20 rounded-lg p-6">
+                        <div class="bg-black/50 border border-neon-cyan/20 rounded-lg p-4 sm:p-6">
                             <h2 class="text-xl font-semibold text-neon-cyan mb-4">Shipping Information</h2>
                             <div class="space-y-4">
                                 <div>
@@ -146,7 +146,7 @@
                                     <textarea required name="address" rows="3"
                                               class="w-full bg-black/30 border border-neon-cyan/20 rounded-lg px-4 py-2 text-white focus:border-neon-cyan focus:ring-1 focus:ring-neon-cyan outline-none transition-colors placeholder-gray-500"></textarea>
                                 </div>
-                                <div class="grid gap-6 md:grid-cols-3">
+                                <div class="grid gap-4 sm:gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
                                     <div>
                                         <label class="block text-sm font-medium text-gray-300 mb-2">City</label>
                                         <input type="text" required name="city"
@@ -166,7 +166,7 @@
                             </div>
                         </div>
 
-                        <div class="bg-black/50 border border-neon-cyan/20 rounded-lg p-6">
+                        <div class="bg-black/50 border border-neon-cyan/20 rounded-lg p-4 sm:p-6">
                             <h2 class="text-xl font-semibold text-neon-cyan mb-4">Payment Information</h2>
                             <div class="space-y-4">
                                 <div>
@@ -174,10 +174,10 @@
                                     <input type="text" required id="cardNumber" name="cardNumber" placeholder="**** **** **** ****"
                                            class="w-full bg-black/30 border border-neon-cyan/20 rounded-lg px-4 py-2 text-white focus:border-neon-cyan focus:ring-1 focus:ring-neon-cyan outline-none transition-colors placeholder-gray-500">
                                 </div>
-                                <div class="grid gap-6 md:grid-cols-3">
-                                    <div class="col-span-2">
+                                <div class="grid gap-4 sm:gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
+                                    <div class="sm:col-span-2">
                                         <label class="block text-sm font-medium text-gray-300 mb-2">Expiration Date</label>
-                                        <div class="grid grid-cols-2 gap-4">
+                                        <div class="grid grid-cols-2 gap-2 sm:gap-4">
                                             <input type="text" required id="expiryMonth" name="expiryMonth" placeholder="MM"
                                                    class="w-full bg-black/30 border border-neon-cyan/20 rounded-lg px-4 py-2 text-white focus:border-neon-cyan focus:ring-1 focus:ring-neon-cyan outline-none transition-colors placeholder-gray-500">
                                             <input type="text" required id="expiryYear" name="expiryYear" placeholder="YY"
@@ -200,8 +200,8 @@
                     </form>
                 </div>
 
-                <div class="lg:col-span-4">
-                    <div class="bg-black/50 border border-neon-cyan/20 rounded-lg p-6 space-y-4 sticky top-24">
+                <div class="lg:col-span-4 mt-8 lg:mt-0">
+                    <div class="bg-black/50 border border-neon-cyan/20 rounded-lg p-4 sm:p-6 space-y-4 sticky top-24">
                         <h2 class="text-xl font-semibold text-neon-cyan">Order Summary</h2>
                         
                         <div id="orderItems" class="space-y-4">
