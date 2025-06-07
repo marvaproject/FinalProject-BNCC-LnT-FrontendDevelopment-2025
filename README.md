@@ -129,14 +129,3 @@ Website ini telah diuji dan berfungsi pada:
 - Safari
 - Edge
 
-## Cara Berkontribusi
-
-1. Fork repositori ini
-2. Buat branch fitur Anda (`git checkout -b feature/FiturKeren`)
-3. Commit perubahan Anda (`git commit -m 'Menambahkan FiturKeren'`)
-4. Push ke branch tersebut (`git push origin feature/FiturKeren`)
-5. Buat Pull Request
-
-## Lisensi
-
-Proyek ini dilisensikan di bawah Lisensi MIT - lihat file LICENSE untuk detail
