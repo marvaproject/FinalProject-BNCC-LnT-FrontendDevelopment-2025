@@ -54,8 +54,8 @@ function updateProductDetails(product) {
         mainImage.alt = product.name;
     }
 
-    document.querySelector('h1').textContent = product.name;
-    document.querySelector('h1 + p').textContent = `Rp ${product.price.toLocaleString()}`;
+    document.getElementById('productName').textContent = product.name;
+    document.getElementById('productPrice').textContent = `Rp ${product.price.toLocaleString()}`;
     
     const description = document.querySelector('.prose.prose-invert p');
     if (description) {

@@ -1,23 +1,19 @@
-/* Theme Toggle Button */
 .theme-toggle {
   @apply p-2 rounded-lg text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors duration-200;
 }
 
-/* Neon Text Effects */
 .text-neon {
   text-shadow:
     0 0 5px rgba(0, 255, 255, 0.5),
     0 0 10px rgba(0, 255, 255, 0.3);
 }
 
-/* Neon Border Effects */
 .border-neon {
   box-shadow:
     0 0 5px rgba(0, 255, 255, 0.5),
     0 0 10px rgba(0, 255, 255, 0.3);
 }
 
-/* Custom Animations */
 @keyframes pulsate {
   0% {
     box-shadow:
@@ -41,14 +37,12 @@
   animation: pulsate 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
 
-/* Smooth Transitions */
 .transition-all {
   transition-property: all;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 300ms;
 }
 
-/* Custom Hover Card Effect */
 .hover-card {
   @apply relative overflow-hidden rounded-lg transform transition-all duration-300;
 }
@@ -57,7 +51,6 @@
   @apply -translate-y-1 shadow-lg dark:shadow-neon;
 }
 
-/* Mobile Menu Slide Animation */
 .mobile-menu-enter {
   opacity: 0;
   transform: translateY(-10px);
@@ -84,7 +77,6 @@
     transform 200ms;
 }
 
-/* Scrollbar Styling */
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
@@ -102,17 +94,14 @@
   @apply bg-gray-500 dark:bg-gray-600;
 }
 
-/* Selection Styling */
 ::selection {
   @apply bg-neon-cyan/20 text-neon-cyan;
 }
 
-/* Focus Styles */
 *:focus {
   @apply outline-none ring-2 ring-neon-cyan/50;
 }
 
-/* Loading Animation */
 @keyframes spin-glow {
   0% {
     transform: rotate(0deg);
