@@ -19,7 +19,7 @@ Sebelum menjalankan proyek ini, pastikan Anda memiliki:
 - Editor Visual Studio Code
 - Ekstensi Live Server untuk VS Code
 
-## Memulai
+## How to get started
 
 ### Metode Utama: Menggunakan VS Code Live Server (Direkomendasikan)
 1. Install Visual Studio Code jika belum ada
@@ -69,29 +69,6 @@ Kemudian buka http://localhost:8000 di browser Anda.
 - Pastikan Anda mengakses situs melalui protokol `http://` atau `https://`
 - VS Code Live Server adalah metode yang direkomendasikan karena memberikan pengalaman pengembangan terbaik
 
-## Struktur Proyek
-
-```
-FinalProject-BNCC-LnT-FrontendDevelopment-2025/
-├── css/
-│   └── style.css              # File utama CSS untuk styling
-├── js/
-│   ├── cart.js               # Logic untuk keranjang belanja
-│   ├── checkout.js           # Logic untuk proses checkout
-│   ├── main.js              # JavaScript utama dan inisialisasi
-│   ├── product-detail.js    # Logic untuk halaman detail produk
-│   └── products.json        # Data produk dalam format JSON
-├── image/                    # Direktori untuk gambar produk dan aset
-├── index.html               # Halaman utama
-├── product.html             # Halaman daftar produk
-├── product-detail.html      # Template halaman detail produk
-├── cart.html               # Halaman keranjang belanja
-├── checkout.html           # Halaman checkout
-├── about.html              # Halaman tentang kami
-├── contact.html            # Halaman kontak
-└── README.md               # Dokumentasi proyek
-```
-
 ## Penjelasan File-file Utama
 
 ### File HTML
@@ -120,12 +97,3 @@ FinalProject-BNCC-LnT-FrontendDevelopment-2025/
 - Vanilla JavaScript
 - Library AOS (Animate On Scroll)
 - Local Storage untuk fungsionalitas keranjang
-
-## Dukungan Browser
-
-Website ini telah diuji dan berfungsi pada:
-- Chrome (direkomendasikan)
-- Firefox
-- Safari
-- Edge
-
